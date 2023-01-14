@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <span className="value">0</span>
-        <button id="inc">Incrementa</button>
-      </div>
-    );
-  }
+function App() {
+  const [count, SetCount] = useState(0);
+  const buttonHandler = () => {
+    let sum = count + 1;
+    SetCount(sum);
+  };
+
+  return (
+    <div>
+      <span className="value">{count}</span>
+      <button id="inc" onClick={buttonHandler}>
+        Incrementa
+      </button>
+    </div>
+  );
 }
-
 export default App;
